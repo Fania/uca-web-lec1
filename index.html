@@ -4,11 +4,12 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Web Design & Development</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="css/fania.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -16,8 +17,727 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+
+<section>
+  <img src="imgs/uca-logo-white.png" alt="logo white" width="500px">
+  <h2>Web Design & Development</h2>
+  <h3>Lecture 1</h3>
+  <!-- <img src="imgs/UCA-Stencil-Logo-White.png" alt="logo white" width="100px"> -->
+</section>
+
+<section>
+  <div class="split2">
+    <div>
+      <h2>Who am I</h2>
+      <p>Dr. Fania Raczinski</p>
+      <p><em>fania.raczinski@uca.ac.uk</em></p>
+    </div>
+    <img src="imgs/nice-portrait.jpg" alt="fania portrait" width="300px">
+  </div>
+</section>
+
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+
+      ## Module Overview
+
+      - HTML5, CSS3, JavaScript
+      - Web Standards, Accessibility
+      - Responsive Design, Media Queries
+      - JavaScript, DOM, Events
+      - Validation, Testing
+
+      ---
+
+      ## Today
+
+      - Assessment, Deadline
+      - Introduction to HTML5, Tags
+      - Introduction to CSS3, Selectors
+      - Box Model, Borders
+      - Positioning, Flow
+    </textarea>
+  </section>
+</section>
+
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+
+    ## Assessment
+
+    *100%* Portfolio
+    <time>25 January 2024 (Thursday)</time>
+
+    Reflective journal that documents design and development decisions (~ 500 words)
+
+    <p class="nomargin">+</p>
+    
+    Create a website that explores design and development possibilities extending from the content learned in this unit
+
+    ---
+
+    ## Submission
+
+    Turnitin on Blackboard
+
+    <time>25 January 2024 (Thursday)</time>
+
+    Zip file containing all of your files
+
+    (html, css, js, any images, plus docx)
+
+    ---
+
+    ## Plagiarism
+
+    Do *NOT* copy other students work
+
+    Do *NOT* copy code online without <span class="gray"> reference</span>
+
+    Do *NOT* use full code templates
+
+    </textarea>
+  </section>
+</section>
+
+
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+
+      ## HTML, CSS, JavaScript
+      
+      - HTML: **what** - defines *content*
+      - CSS: **how** - specifies *layout/presentation*
+      - JavaScript: **when** - codes *interaction*
+
+      ---
+
+      ## HTML History 1
+
+      - **SGML** (title, h1-6, p, ol, ul...)
+      - **1965** Ted Nelson & the hyperlink
+      - **1987** Hypercard uses local hyperlinks (Bill Atkinson, Apple)
+      - **HTML** devised by Tim Berner-Lee (TBL) at CERN
+      - **1989** TBL creates HTML/WWW on NeXT (for *collaborative research*)
+      - **1990** global hypertext project - first <a href="https://worldwideweb.cern.ch/browser/#https://worldwideweb.cern.ch/browser/default.html">*W*orld*W*ide*W*eb (WWW) browser</a>
+      - **1991** the Internet first carries the WWW
+
+      ---
+
+      ## HTML History 2
+
+      - **2008** HTML5 first released
+      - **2014** HTML5 becomes a [W3C](https://www.w3.org/) recommendation
+
+      <p class="blank">...</p>
+
+      ### **Semantic tags do** what they **say**!
+
+      `header`, `figure`+`figcaption`, `nav`, `section`, `footer`…
+
+      ---
+
+      ## CSS History 1
+      
+      - **1994** first draft of *Cascading HTML Style Sheets*, Håkon Wium Lie (CERN)
+      - **1995** W3C Board set up for HTML specifications
+      - **1996** MS Internet Explorer first to support CSS
+      - **1996** CSS1 *W3C* Recommendation
+      - **1996** W3C forms CSS Working Group
+      - **1998** CSS2 published as *W3C* Recommendation
+
+      ---
+
+      ## CSS History 2
+      
+      - **2000** W3C CSS3 Working Draft
+      - **2011** W3C releases *CSS 2.1* (fixed errors, better browser matching)
+      - **2014** W3C Candidate Recommendation CSS Syntax Module Level 3
+      - **2017** CSS3 and browser support *continues to evolve*…
+      
+      
+    </textarea>
+  </section>
+</section>
+
+
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+
+      ## HOW WEBSITES WORK 1
+      
+      ### **BACK** END: “SERVER”
+      
+      > A **web server** handles your requests for a website, does background **processing** and **retrieval** using [http](https://http.cat/) (e.g. from databases), finds `.html`,`.css`, `.js` **files**, plus **images**, **fonts**, **audio** etc., then **serves** it all to your **browser**.
+
+      ---
+
+      ## HOW WEBSITES WORK 2
+      
+      ### **FRONT** END: “CLIENT”
+      
+      > A 'client'—usually a **web browser**—receives **files** from the server and **displays** the pages you requested by rendering the **HTML**, applying **CSS** styles to the HTML **elements**, and reading (*parsing*) **JavaScript** code.
+      
+    </textarea>
+  </section>
+</section>
+
+
+
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+
+      ## HTML 1
+      
+      An **HTML5** document begins with a **document type**:
+      
+      ```html
+      <!doctype html>
+      ```
+      Then the **main** (parent) element:
+      ```html
+      <html> ... </html>
+      ```
+      And inside that some **information** the browser needs:
+      ```html
+      <head> ... </head>
+      ```
+      As well as what actually **appears** in the browser:
+      ```html
+      <body> ... </body>
+      ```
+
+      ---
+
+      ## HTML 2
+      
+      Together this looks roughly likes this:  
+      **All websites** have the following fundamental **HTML structure**!
+      
+      ```html
+      <!doctype html>
+      <html>
+        <head>
+        ...
+        </head>
+        <body>
+        ...
+        </body>
+      </html>
+      ```
+
+      ---
+
+      ## HTML 3
+      
+      ### *IMPORTANT SLIDE !!*
+      
+      Visible content is between **matching pairs** of HTML tags:
+
+      ```html
+      <header>The box at the top</header>
+
+      <h2>A heading element</h2>
+
+      <p>Some text in a paragraph</p>
+
+      <footer>The box at the bottom</footer>
+      ```
+
+
+      ---
+
+      ## HTML 4
+      
+      Some tags **don't need 'closing'** e.g. the `img` tag:
+      
+      ```html
+      <img src="imgs/my-lovely-horse.png" alt="horse looking dapper">
+      ```
+      The only other **'self-closing' tags** you might use are:
+
+      ```html
+      <br> <!-- a line break -->
+
+      <input> <!-- for forms -->
+      ```
+
+      ---
+
+      ## HTML 5
+  
+      A **hyperlink** goes to *another page*, a separate *website*,  
+      or can jump to a *specific section* on the same page,  
+      marked by an HTML `id` attribute:
+      
+      ```html
+      <a href="another-page.html">Go to another page</a>
+  
+      <a href="http://xkcd.com">Go to another website</a>
+  
+      <a href="#my_section">Jump to an ID on the page</a>
+  
+      <section id="my_section">
+        <p>The link above will jump to this section</p>
+      </section>
+      ```
+
+      ---
+
+      ## HTML 6
+      
+      ### *IMPORTANT SLIDE !!*
+      
+      most HTML tags are **nested inside** other HTML tags:
+      (watch your indentation!)
+      
+      ```html
+      <header>
+        <h1>The main heading</h1>
+      </header>  
+
+      <section>
+        <h2>A section heading</h2>
+        <p>Some text in a paragraph</p>
+      </section>
+      ```
+
+      ---
+
+      ## HTML 7
+      
+      You can add **HTML comments** in your code:
+      
+      ```html
+      <!-- The figure tag is for image/captions boxes -->
+
+      <figure>
+        <!-- The img tag goes here -->
+        <!-- The figcaption tag goes here -->
+      </figure>
+      ```
+
+      Text between `<!--` and `-->` won't show on screen.
+    </textarea>
+  </section>
+</section>
+
+
+
+
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+
+      ## CSS 0
+      
+      the stylesheet needs to be linked in the `head` section
+
+      ```html
+      <link rel="stylesheet" href="path/to/styles.css">
+      ```
+
+      technically, it can go between `style` tags directly in the `head` section, but it should really go into an external file
+
+      ```html
+      <style>
+        body {
+          background: beige;
+        }
+      </style>
+      ```
+
+      ---
+
+      ## CSS 1
+      
+      the **selector** is the element to be styled:
+
+      ```css
+      selector { /* can be element, class, id… */
+        property: value;
+      }
+      ```
+      
+      inside the curly braces `{ }`, the *property* and *value*  
+      together make a CSS **declaration** e.g.
+      
+      ```css
+      main { /* targets tag main */
+        margin: 0 auto;
+      }
+      aside.sidebar { /* targets tag aside with class sidebar */
+        width: 50%;
+      }
+      form#myForm { /* targets tag form with id myForm */
+        background: #666;
+      }
+      ```
+
+      ---
+
+      ## IMPORTANT SLIDE
+
+      **IDs** should always be *unique*! (CSS **#NameOfID**)
+
+      IDs are often used to identify things in JavaScript
+
+      **classes** can be applied to *multiple* tags (CSS **.NameofClass**)
+
+      Classes are often used to style similar things in CSS
+
+      ---
+
+      ## CSS 2
+      
+      A CSS **rule** inside `{}` can contain **multiple** CSS **declarations**:
+      
+      ```css
+      main {
+        margin: 10px; /* 10 pixels all round */
+        width: 80%; /* always 80% of the screen width */
+        background: #eee;
+        font-family: Tahoma, Helvetica, sans-serif;
+      }
+      ```
+
+      or be on **one line** (*harder to read* when developing):
+
+      ```css
+      main { margin: 0 auto; width: 50%; }
+      ```
+
+      ---
+
+      ## CSS 3
+
+      ```css
+      main div { background: beige; } /* all children */
+      ```
+      ```css
+      main > p { background: teal; } /* first child */
+      ```
+      ```css
+      main + ul { background: cyan; } /* sibling */
+      ```
+      ```css
+      main ~ footer { background: magenta; } /* somewhere nearby */
+      ```
+      ```css
+      input[type='checkbox']:checked /* if checkbox has been ticked */
+      ```
+
+      ---
+
+      ## CSS 4
+
+      There are several **selector types**—they can also be:
+
+      - [pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) (e.g. `:hover` or `:checked`)
+      - [pseudo-elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements) (e.g. `::before` or `::first-line`)
+
+      CSS **selector references**:
+
+      - [List of selectors](http://www.w3schools.com/cssref/css_selectors.asp) (W3Schools)
+      - [Interactive page of CSS selectors](http://www.w3schools.com/cssref/trysel.asp) (W3Schools)
+
+    </textarea>
+  </section>
+</section>
+
+
+
+
+
+<section>
+  <section>
+    <h2>CSS Box Model</h2>
+    <p><strong>width</strong>, <strong>height</strong>, <strong>margin</strong>, <strong>padding</strong>, and <strong>border</strong></p>
+    <p>These can be adjusted using various units:</p>
+    <ul>
+      <li><em>px</em>: 1/96 inch</li>
+      <li><em>vw/vh</em>: width/height of viewport</li>
+      <li><em>em</em>: inherits font-size from parent element</li>
+      <li><em>rem</em>: inherits font-size from root document</li>
+      <li><em>%</em>: relative to parent element</li>
+    </ul>
+  </section>
+
+  <section data-background-iframe="http://guyroutledge.github.io/box-model/"
+          data-background-interactive>
+  </section>
+
+  <section>
+    <h2>CSS Borders & Border-Radius</h2>
+    <div class="group">
+      <div style="border-radius: 50%; border: 4px solid blue; background: cyan; width: 100px; height: 100px; filter: drop-shadow(0 0 0.75rem rgba(255,255,255,0.2));">
+      </div>
+      <div style="border-radius: 100% 0 0 0; border: 4px dotted red; background: magenta; width: 100px; height: 100px; filter: drop-shadow(0 0 0.75rem rgba(255,255,255,0.2));">
+      </div>
+      <div style="border-radius: 50% 0 0 50%; border: 4px ridge orange; background: yellow; width: 100px; height: 100px; filter: drop-shadow(0 0 0.75rem rgba(255,255,255,0.2));">
+      </div>
+    </div>
+
+    <pre><code data-trim data-noescape>
+      div.first {
+        border-radius: 50%;        /* 50% all around */
+        border: 4px solid blue;
+      }
+      div.second {
+        border-radius: 100% 0 0 0; /* border-top-left-radius */
+        border: 4px dotted red;
+      }
+      div.third {                   /* border-bottom-left-radius */
+        border-radius: 50% 0 0 50%; /* border-top-left-radius */
+        border: 4px ridge orange;   
+      }
+    </code></pre>
+  </section>
+
+</section>
+
+
+
+
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+    ## CSS Positioning and Flow
+
+    ### Natural/Normal Flow
+
+    **How does your <code>HTML</code> look without <code>CSS</code>?**
+
+    - all html elements are either **block** or **inline**
+    - inline elements wrap lines, just as text would
+    - you can change the **display** property of elements
+    - if unsure inspect element in the browser
+
+    ---
+
+    ## Block-level elements
+
+    > "A block-level element always starts on a new line and takes up the full width available (stretches out to the left and right as far as it can)." [*]<!-- .element: data-preview-link -->
+
+    ```css
+    div {
+      display: block;
+    }
+    ```
+
+    E.g. `<header>,<nav>,<div>,<section>,<h1>,<p>,<ul>,<form>,<table>,<figure>,<footer>`…
+
+    [*]: https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements
+
+    ---
+
+    ## Inline elements
+
+    > "An inline element does not start on a new line and only takes up as much width as necessary." [*]
+
+    ```css
+    span {
+      display: inline;
+    }
+    ```
+
+    E.g. `<a>,<span>,<code>,<button>,<strong>,<em>,<img>,<video>,<input>`…
+
+    [*]: https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements
+
+    ---
+
+    ## Display Property
+
+    There are many different [display types](https://developer.mozilla.org/en-US/docs/Web/CSS/display):
+
+    - `none, inline, block, inline-block, table, list-item, flex, grid`
+    - **flex** and **grid** are for more advanced layouts
+
+    [W3Schools Try "The Display Property"](https://www.w3schools.com/cssref/tryit.asp?filename=trycss_display)
+
+    [W3Schools Try "Inline-Block"](https://www.w3schools.com/css/tryit.asp?filename=trycss_inline-block_span1)
+
+    ---
+
+    ## Positioning Elements
+
+    - more varied uses than floats, 
+    - can position elements in one of 5 ways
+    - `static, relative, absolute, fixed, sticky`
+    - you might need `top, bottom, left, right` too
+
+    ![](https://raw.githubusercontent.com/TECH3015/lectures/master/imgs/layout/css-positioning-schemes.png)
+
+    ---
+
+    ## Static
+
+    - default
+    - *not* affected by `top, bottom, left, right`
+
+    ```css
+    div {
+      position: static;
+    }
+    ```
+
+    ---
+
+    ## Relative
+
+    - position relative to **original location**
+    - affected by `top, bottom, left, right`
+    - if moved, leaves original space empty
+    - is also used to give a **positioning context**
+
+    ```css
+    div:hover {
+      position: relative;
+      bottom: 2px; /* e.g. move on hover */
+      right: 2px;
+    }
+    ```
+
+    ---
+
+    ## Absolute
+
+    - position relative to **nearest positioned ancestor**
+    - if no ancestor, then `body` is used as the context (container)
+    - **ancestor also needs to be positioned** e.g. `relative`
+    - moves with page when scrolling
+    - affected by `top, bottom, left, right`
+
+    ```css
+    button { /* place in bottom right of a container */
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+    ```
+
+    ---
+
+    ## Fixed
+
+    - position relative to the **viewport**
+    - stays fixed **when scrolling**
+    - affected by `top, bottom, left, right`
+
+    ```css
+    nav {
+      position: fixed;
+      top: 2em;
+      left: 10px;
+    }
+    ```
+
+    ---
+
+    ## Sticky
+
+    - position relative to **user's scroll position**
+    - stays fixed after scrolling to sticky point
+    - affected by `top, bottom, left, right`
+
+    ```css
+    nav {
+      position: sticky;
+      top: 10px;
+    }
+    ```
+    </textarea>
+  </section>
+</section>
+
+
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+      ## FLEXBOX
+
+      Most designs are laid out with **flexbox** nowadays!
+
+      ```css
+      nav {
+        display: flex;
+        justify-content: space-around; /* horizontal spacing */
+        align-items: center;           /* vertical spacing */
+        /* flex-direction: column; */
+      }
+      ```
+
+      *But that's for next time*
+
+    </textarea>
+  </section>
+</section>
+
+
+
+
+
+
+
+<section>
+  <section data-markdown>
+    <textarea data-template>
+      ## TIDY CODE
+        
+      ### *IMPORTANT SLIDE !!*
+      
+      - **indent all your code** as you go, with **2 spaces**!
+      - **HTML** in `.html` files (`<`angle brackets`>`)
+      - **CSS** in `.css` files (`{`curly braces`}`)
+      
+      <p class="blank">...</p>
+
+      ### KEEPING **CODE TIDY** WILL HELP YOU **A LOT** :-)
+
+      ---
+
+      ## TIDY FILES
+      
+      ### *IMPORTANT SLIDE !!*
+      
+      - **YES** all file & folder names **lower-case**!
+      - **YES** all **resized images** in an `images` folder!
+      - **NO** *spaces* in filenames (incl. images etc.)!
+      - **NO** unused, old files in folder (e.g. photoshop files)!
+      
+      <p class="blank">...</p>
+
+      ### Clean up at the end of every session :-)
+    </textarea>
+  </section>
+</section>
+
+
+
+
+
+
+
+
+<section data-markdown>
+  ## References
+  [The birth of the Web](https://home.cern/topics/birth-web), [A history of HTML](https://www.w3.org/People/Raggett/book4/ch02.html), [A Brief History of CSS](http://www.css-class.com/a-brief-history-of-css/), [W3C CSS Syntax Module Level 3](https://www.w3.org/TR/css-syntax-3/), [Learn HTML](https://www.codecademy.com/learn/learn-html), [Learn CSS](https://www.codecademy.com/learn/learn-css), [Learn how to build websites](https://www.codecademy.com/learn/paths/learn-how-to-build-websites), [Introduction to JavaScript](https://www.codecademy.com/learn/introduction-to-javascript), [Introduction to HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML), [Introduction to CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS), [JavaScript basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics), [W3Schools HTML](http://www.w3schools.com/html/), [W3Schools CSS](http://www.w3schools.com/css/), [W3Schools Borders](https://www.w3schools.com/css/css_border.asp), [W3Schools: Position Property](https://www.w3schools.com/css/css_positioning.asp), [MDN: Positioning](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning), [Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
+</section>
+
 			</div>
 		</div>
 
