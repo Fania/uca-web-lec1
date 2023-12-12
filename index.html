@@ -176,7 +176,7 @@
       
       ### **BACK** END: “SERVER”
       
-      > A **web server** handles your requests for a website, does background **processing** and **retrieval** using [http](https://http.cat/) (e.g. from databases), finds `.html`,`.css`, `.js` **files**, plus **images**, **fonts**, **audio** etc., then **serves** it all to your **browser**.
+      > A **web server** handles your [DNS](https://en.wikipedia.org/wiki/Domain_Name_System) requests for a website, does background **processing** and **retrieval** (e.g. from databases), finds `.html`,`.css`, `.js` **files**, plus **images**, **fonts**, **audio** etc., then **serves** it all to your **browser** using [http](https://http.cat/).
 
       ---
 
@@ -184,7 +184,7 @@
       
       ### **FRONT** END: “CLIENT”
       
-      > A 'client'—usually a **web browser**—receives **files** from the server and **displays** the pages you requested by rendering the **HTML**, applying **CSS** styles to the HTML **elements**, and reading (*parsing*) **JavaScript** code.
+      > A 'client'—usually a **web browser**—receives **files** from the server using using [http](https://http.cat/) and **displays** the pages you requested by rendering the **HTML**, applying **CSS** styles to the HTML **elements**, and reading (*parsing*) **JavaScript** code.
       
     </textarea>
   </section>
@@ -199,46 +199,25 @@
 
       ## HTML 1
       
-      An **HTML5** document begins with a **document type**:
-      
-      ```html
-      <!doctype html>
-      ```
-      Then the **main** (parent) element:
-      ```html
-      <html> ... </html>
-      ```
-      And inside that some **information** the browser needs:
-      ```html
-      <head> ... </head>
-      ```
-      As well as what actually **appears** in the browser:
-      ```html
-      <body> ... </body>
-      ```
-
-      ---
-
-      ## HTML 2
-      
-      Together this looks roughly likes this:  
-      **All websites** have the following fundamental **HTML structure**!
+      An **HTML5** document consists of 4 core elements:  
+      `doctype`, `html`, `head`, and `body`  
+      **All websites** have the following fundamental *structure*!
       
       ```html
       <!doctype html>
       <html>
         <head>
-        ...
+          <!-- some **information** the browser needs -->
         </head>
         <body>
-        ...
+          <!-- what actually **appears** in the browser -->
         </body>
       </html>
       ```
 
       ---
 
-      ## HTML 3
+      ## HTML 2
       
       ### *IMPORTANT SLIDE !!*
       
@@ -257,24 +236,24 @@
 
       ---
 
-      ## HTML 4
+      ## HTML 3
       
       Some tags **don't need 'closing'** e.g. the `img` tag:
       
       ```html
-      <img src="imgs/my-lovely-horse.png" alt="horse looking dapper">
+      <img src="imgs/my-lovely-horse.png" alt="nice horse">
       ```
       The only other **'self-closing' tags** you might use are:
 
       ```html
       <br> <!-- a line break -->
 
-      <input> <!-- for forms -->
+      <input type="checkbox" name="horses"> <!-- for forms -->
       ```
 
       ---
 
-      ## HTML 5
+      ## HTML 4
   
       A **hyperlink** goes to *another page*, a separate *website*,  
       or can jump to a *specific section* on the same page,  
@@ -294,7 +273,7 @@
 
       ---
 
-      ## HTML 6
+      ## HTML 5
       
       ### *IMPORTANT SLIDE !!*
       
@@ -314,7 +293,7 @@
 
       ---
 
-      ## HTML 7
+      ## HTML 6
       
       You can add **HTML comments** in your code:
       
@@ -442,10 +421,8 @@
 
       ## CSS 4
 
-      There are several **selector types**—they can also be:
-
-      - [pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) (e.g. `:hover` or `:checked`)
-      - [pseudo-elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements) (e.g. `::before` or `::first-line`)
+      [pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) (e.g. `:hover` or `:checked`)  
+      [pseudo-elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements) (e.g. `::before` and `::after`)
 
       CSS **selector references**:
 
@@ -494,15 +471,15 @@
     </div>
 
     <pre><code data-trim data-noescape>
-      div.first {
-        border-radius: 50%;        /* 50% all around */
+      div.cyan.first {
+        border-radius: 50%;     /* 50% all around */
         border: 4px solid blue;
       }
-      div.second {
+      div.magenta.second {
         border-radius: 100% 0 0 0; /* border-top-left-radius */
         border: 4px dotted red;
       }
-      div.third {                   /* border-bottom-left-radius */
+      div.yellow.third {            /* border-bottom-left-radius */
         border-radius: 50% 0 0 50%; /* border-top-left-radius */
         border: 4px ridge orange;   
       }
@@ -672,20 +649,35 @@
 <section>
   <section data-markdown>
     <textarea data-template>
-      ## FLEXBOX
+      ## Before FLEXBOX
 
-      Most designs are laid out with **flexbox** nowadays!
+      ### Centering Things
 
+      ![xkcd-tar-remix](imgs/css-disarm-bomb.jpg)
+
+      ---
+
+      ## After FLEXBOX
+
+      ```html
+      <div>
+        <img src="imgs/cat1.png" alt="nice cat">
+        <img src="imgs/cat2.png" alt="nice cat">
+        <img src="imgs/cat3.png" alt="nice cat">
+      </div>
+      ```
       ```css
-      nav {
+      div {
         display: flex;
-        justify-content: space-around; /* horizontal spacing */
-        align-items: center;           /* vertical spacing */
+        justify-content: center;       /* horizontal */
+        align-items: center;           /* vertical */
+        gap: 10px;
         /* flex-direction: column; */
       }
       ```
 
-      *But that's for next time*
+      **Note**: The elements inside the `div` are centered,  
+      not the `div` itself!
 
     </textarea>
   </section>
